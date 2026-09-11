@@ -3,4 +3,5 @@
 @section('content')
     @include('components.hero')
     @include('components.features')
+    @include('components.showcase')
 @endsection
