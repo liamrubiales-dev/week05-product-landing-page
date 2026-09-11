@@ -15,7 +15,7 @@
                 <span class="font-serif text-xl font-bold text-brew-ink tracking-wide">BREWVERY</span>
             </a>
 
-            <div class="hidden md:flex items-center gap-8">
+            <div class="hidden lg:flex items-center gap-8">
                 <a href="#home" class="text-brew-ink hover:text-brew-amber transition-colors">Home</a>
                 <a href="#features" class="text-brew-ink hover:text-brew-amber transition-colors">Features</a>
                 <a href="#pricing" class="text-brew-ink hover:text-brew-amber transition-colors">Pricing</a>
@@ -23,18 +23,18 @@
                 <a href="#contact" class="text-brew-ink hover:text-brew-amber transition-colors">Contact</a>
             </div>
 
-            <div class="hidden md:flex items-center gap-3">
+            <div class="hidden lg:flex items-center gap-3">
                 <a href="#" class="px-4 py-2 text-brew-ink hover:text-brew-amber transition-colors">Sign in</a>
                 <a href="#" class="px-5 py-2 rounded-lg bg-brew-amber text-brew-cream hover:bg-brew-ink transition-colors shadow-sm">Get started</a>
             </div>
 
-            <button id="menu-toggle" class="md:hidden text-brew-ink" aria-label="Toggle menu">
+            <button id="menu-toggle" class="lg:hidden text-brew-ink" aria-label="Toggle menu">
                 <svg id="icon-open" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 <svg id="icon-close" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden pb-6 flex flex-col gap-4">
+        <div id="mobile-menu" class="hidden lg:hidden pb-6 flex flex-col gap-4">
             <a href="#home" class="text-brew-ink">Home</a>
             <a href="#features" class="text-brew-ink">Features</a>
             <a href="#pricing" class="text-brew-ink">Pricing</a>

@@ -10,7 +10,7 @@
             'name' => 'Liam Rubiales',
             'position' => 'College student',
             'review' => 'The Okinawa milk tea is unmatched. I stop by BREWVERY between classes almost every day and the staff already know my order.',
-            'initials' => 'AC',
+            'initials' => 'LR',
             'color' => '#B8752E',
         ])
 
@@ -18,7 +18,7 @@
             'name' => 'Einjel Gonzaga',
             'position' => 'Regular customer',
             'review' => 'Finally a milk tea place that does not skimp on the boba. The Duo Treat pass saves me so much money since I always order with my girlfriend.',
-            'initials' => 'MV',
+            'initials' => 'EG',
             'color' => '#6E7F5C',
         ])
 
@@ -26,7 +26,7 @@
             'name' => 'Vernise Argonza',
             'position' => 'Regular customer',
             'review' => 'I have tried every milk tea shop in the area for my page, and BREWVERY genuinely brews fresh tea instead of using powder. You can taste the difference.',
-            'initials' => 'JR',
+            'initials' => 'VA',
             'color' => '#3A2417',
         ])
 
