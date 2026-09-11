@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-brew-cream text-brew-ink font-sans">
-    @include('components.navbar')
+     @include('components.navbar')
     {{ $slot ?? '' }}
     @yield('content')
 </body>

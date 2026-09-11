@@ -1,58 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# BREWVERY — Responsive Product Landing Page
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A responsive product landing page built with Laravel, Blade Components, and Tailwind CSS for **BREWVERY**, a real milk tea shop, as part of Week 5 Mini Project 04 for ITST 302 – Client-Server Technologies.
 
-## About Laravel
+**Live repo:** https://github.com/liamrubiales-dev/week05-product-landing-page
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Introduction
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+A product landing page is a single, focused web page designed to introduce a business, product, or service to visitors and guide them toward a specific action — ordering, signing up, or getting in touch. Unlike a general website, a landing page is built around clarity and conversion: every section exists to answer a visitor's questions and move them closer to becoming a customer.
 
-## Learning Laravel
+Landing pages matter for businesses, especially small and local ones, because they are often a customer's first impression. A clean, professional, and mobile-friendly page builds trust, communicates what the business offers, and makes it easy for someone to act — whether that means visiting in person or reaching out online.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The purpose of this project was to design and build a modern, responsive landing page for a real, existing business using Laravel Blade Components and Tailwind CSS, applying component-based frontend architecture and responsive design principles learned in this module. I chose **BREWVERY**, a milk tea shop, as the business for this project.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Objectives
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Through this activity, the following learning objectives were accomplished:
 
-## Agentic Development
+- Built responsive web interfaces using Tailwind CSS utility classes.
+- Created reusable Laravel Blade Components (`navbar`, `hero`, `feature-card`, `pricing-card`, `testimonial-card`, `button`, `footer`) to eliminate duplicated markup.
+- Applied responsive design principles across desktop, tablet, and mobile breakpoints, including fixing a real tablet-width navbar overlap issue during testing.
+- Organized frontend components following Laravel's recommended folder structure (`layouts`, `components`, `pages`).
+- Implemented consistent UI design using a custom color palette, typography scale, spacing, and card layouts.
+- Documented the frontend architecture, component design, and design decisions in this README.
+- Prepared the project for publishing as a professional portfolio piece via GitHub and LinkedIn.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Responsive Web Design
 
-```bash
-composer require laravel/boost --dev
+This project follows a **mobile-first mindset**, meaning base styles target small screens first, with larger layouts layered on top using Tailwind's responsive breakpoints (`sm:`, `md:`, `lg:`).
 
-php artisan boost:install
+- **Mobile-first design:** Elements like the features grid default to a single column (`grid-cols-1`) and only expand to multiple columns at larger breakpoints (`sm:grid-cols-2`, `lg:grid-cols-3`), ensuring the page is usable on the smallest screens without extra overrides.
+- **Responsive breakpoints:** The navbar originally switched from a hamburger menu to a full desktop menu at the `md:` (768px) breakpoint. During testing, this caused nav links and buttons to overlap on tablet-width screens because there wasn't enough horizontal space. The breakpoint was moved to `lg:` (1024px) so tablets keep the clean hamburger menu, and only genuinely wide screens show the full navigation.
+- **Flexbox:** Used throughout for one-dimensional layouts — the navbar's logo/links/buttons row, the hero section's text-and-illustration split, and button groups that stack vertically on mobile (`flex-col`) and go horizontal on larger screens (`sm:flex-row`).
+- **CSS Grid:** Used for two-dimensional layouts like the features grid, pricing cards, testimonial cards, and the flavor showcase grid, which reflows from 2 to 4 columns depending on screen width.
+- **User Experience (UX):** Responsive design directly affects usability — a layout that overlaps or requires horizontal scrolling on a phone drives visitors away. Testing across breakpoints and fixing the tablet navbar issue ensured the page stays legible and usable everywhere a real customer might view it.
+
+## Tailwind CSS
+
+Tailwind CSS was used throughout the project as the styling framework.
+
+- **Utility-first CSS:** Instead of writing custom CSS classes and switching between HTML and stylesheet files, styling is applied directly in markup using small, single-purpose classes (`px-6`, `rounded-xl`, `text-brew-ink`), which speeds up development and keeps styles colocated with the markup they affect.
+- **Advantages of Tailwind CSS:** No unused CSS bloat, consistent spacing/sizing scale across the whole project, and no need to invent and maintain custom class names for every component.
+- **Responsive utility classes:** Breakpoint prefixes like `md:flex`, `lg:hidden`, and `sm:grid-cols-2` made it possible to change layout behavior per screen size without writing separate media query blocks.
+- **Component styling:** Tailwind v4's `@theme` directive was used in `resources/css/app.css` to register BREWVERY's brand colors as reusable design tokens:
+
+```css
+@theme {
+    --color-brew-ink: #3A2417;
+    --color-brew-cream: #F3E6D3;
+    --color-brew-amber: #B8752E;
+    --color-brew-sage: #6E7F5C;
+}
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+  This made classes like `bg-brew-cream`, `text-brew-ink`, and `border-brew-amber` available everywhere in the project, keeping the brand palette consistent without repeating hex codes.
 
-## Contributing
+## Blade Components
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Blade Components are reusable pieces of Laravel view markup that can accept data and be rendered anywhere in the application, similar to components in modern frontend frameworks.
 
-## Code of Conduct
+This project uses reusable components for every repeating UI element instead of duplicating HTML across sections:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+For example, `button.blade.php` uses Blade's `@props` directive to accept a `variant` and `href`, then reuses one consistent button style everywhere it's called:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```blade
+@props(['variant' => 'primary', 'href' => '#'])
 
-## License
+<a href="{{ $href }}" {{ $attributes->merge(['class' => $base . ' ' . $style]) }}>
+    {{ $slot }}
+</a>
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Usage anywhere in the project is then as simple as:
+
+```blade
+<x-button href="#pricing">Order now</x-button>
+<x-button variant="secondary" href="#features">View menu</x-button>
+```
+
+**Why reusable components improve maintainability:** Before extracting `button.blade.php`, the same button styling was repeated as raw `<a>` tags in the hero, CTA, and pricing sections. Updating the button style meant editing multiple files and risking inconsistency. With a single component, a style change happens in one place and applies everywhere instantly.
+
+**Benefits of modular UI development:** Components make the codebase easier to read, test, and extend. New sections (like the pricing cards) could reuse `pricing-card.blade.php` three times with different data instead of copy-pasting markup, reducing the chance of bugs and keeping the design visually consistent.
+
+See `screenshots/blade-components-folder.png` for the full components folder structure.
+
+## User Interface Design
+
+- **Color palette:** A warm, food-based palette pulled directly from milk tea itself rather than a generic startup color scheme — steeped tea ink (`#3A2417`), milk cream (`#F3E6D3`), brown sugar amber (`#B8752E`), and tea-leaf sage (`#6E7F5C`). This keeps the design visually tied to the actual product.
+- **Typography:** A serif typeface (`font-serif`) is used for headings and the BREWVERY wordmark to feel warm and crafted, paired with a clean sans-serif for body text and UI labels, keeping a clear distinction between "brand voice" and "interface text."
+- **Iconography:** Simple outlined SVG icons are used for features and UI elements (clock, leaf, cart) rather than filled icons, matching the light, airy feel of the cream background.
+- **Button styles:** A single reusable `button.blade.php` component defines primary (filled amber), secondary (outlined), and dark-background variants, ensuring every call-to-action across the site looks and behaves consistently.
+- **Card design:** Feature, pricing, and testimonial cards share consistent rounded corners, spacing, and subtle shadows that lift slightly on hover, giving the page a tactile, modern feel without relying on heavy drop shadows or gradients.
+- **Layout consistency:** All major sections share the same `max-w-6xl mx-auto px-6` container pattern, keeping content aligned and readable at every screen size, and preventing the page from feeling inconsistent as you scroll.
+
+Together, these choices contribute to a better user experience by making the page feel cohesive, trustworthy, and specific to BREWVERY rather than a generic template.
+
+## Folder Structure
+
+
+## Screenshots
+
+**Before and after:**
+
+| Before | After |
+|---|---|
+| ![Before](documentation/before.png) | ![After](documentation/after.png) |
+
+**Desktop, tablet, and mobile views:**
+
+![Desktop view](screenshots/desktop-view.png)
+![Tablet view](screenshots/tablet-view.png)
+![Mobile view](screenshots/mobile-view.png)
+
+**Individual sections:**
+
+![Navigation bar](screenshots/navbar.png)
+![Hero section](screenshots/hero-section.png)
+![Features section](screenshots/features-section.png)
+![Pricing section](screenshots/pricing-section.png)
+![Testimonials](screenshots/testimonials.png)
+![Footer](screenshots/footer.png)
+
+**Project structure:**
+
+![VS Code project structure](screenshots/vscode-structure.png)
+![Blade components folder](screenshots/blade-components-folder.png)
+![GitHub repository](screenshots/github-repo.png)
+
+---
+
+## Reflection
+
+Building BREWVERY's landing page was my first real experience with Laravel Blade Components and Tailwind CSS working together. The biggest lesson was how much reusable components pay off once you have more than a couple of repeated elements — extracting `button.blade.php` partway through the project made every button consistent instantly instead of requiring manual edits across five files. Testing responsiveness also caught a real bug (the tablet navbar overlap) that I wouldn't have noticed without checking every breakpoint deliberately, reinforcing why responsive testing is a required step and not an afterthought.
+
