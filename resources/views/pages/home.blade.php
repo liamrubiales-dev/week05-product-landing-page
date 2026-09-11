@@ -5,4 +5,5 @@
     @include('components.features')
     @include('components.showcase')
     @include('components.pricing')
+    @include('components.testimonials')
 @endsection
