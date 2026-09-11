@@ -6,4 +6,6 @@
     @include('components.showcase')
     @include('components.pricing')
     @include('components.testimonials')
+    @include('components.cta')
+    @include('components.footer')
 @endsection
