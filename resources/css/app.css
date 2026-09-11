@@ -1,6 +1,13 @@
 @import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@theme {
+    --color-brew-ink: #3A2417;
+    --color-brew-cream: #F3E6D3;
+    --color-brew-amber: #B8752E;
+    --color-brew-sage: #6E7F5C;
+}
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resourc5es/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
 @theme {
