@@ -25,7 +25,7 @@
 
             <div class="hidden lg:flex items-center gap-3">
                 <a href="#" class="px-4 py-2 text-brew-ink hover:text-brew-amber transition-colors">Sign in</a>
-                <a href="#" class="px-5 py-2 rounded-lg bg-brew-amber text-brew-cream hover:bg-brew-ink transition-colors shadow-sm">Get started</a>
+                <x-button href="#pricing">Get started</x-button>
             </div>
 
             <button id="menu-toggle" class="lg:hidden text-brew-ink" aria-label="Toggle menu">
@@ -41,7 +41,7 @@
             <a href="#testimonials" class="text-brew-ink">Testimonials</a>
             <a href="#contact" class="text-brew-ink">Contact</a>
             <a href="#" class="text-brew-ink">Sign in</a>
-            <a href="#" class="px-5 py-2 rounded-lg bg-brew-amber text-brew-cream text-center">Get started</a>
+            <x-button href="#pricing">Get started</x-button>
         </div>
     </div>
 </nav>

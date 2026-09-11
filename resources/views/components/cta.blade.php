@@ -7,12 +7,8 @@
             Visit us in-store, follow us for daily flavor drops, or reach out if you're planning an event.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#pricing" class="px-6 py-3 rounded-lg bg-brew-amber text-brew-cream font-semibold hover:bg-brew-cream hover:text-brew-ink transition-colors">
-                Order now
-            </a>
-            <a href="mailto:hello@brewvery.com" class="px-6 py-3 rounded-lg border border-brew-cream/30 text-brew-cream font-semibold hover:bg-brew-cream/10 transition-colors">
-                Contact us
-            </a>
+            <x-button href="#pricing">Order now</x-button>
+            <x-button variant="secondary-dark" href="mailto:hello@brewvery.com">Contact us</x-button>
         </div>
     </div>
 </section>

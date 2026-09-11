@@ -10,12 +10,8 @@
                 Handcrafted milk tea made fresh daily with real ingredients, chewy boba, and flavors you'll want to come back for.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="#pricing" class="px-6 py-3 rounded-lg bg-brew-amber text-brew-cream font-semibold hover:bg-brew-ink transition-colors shadow-sm">
-                    Order now
-                </a>
-                <a href="#features" class="px-6 py-3 rounded-lg border border-brew-ink/20 text-brew-ink font-semibold hover:bg-brew-ink/5 transition-colors">
-                    View menu
-                </a>
+                <x-button href="#pricing">Order now</x-button>
+                <x-button variant="secondary" href="#features">View menu</x-button>
             </div>
         </div>
 

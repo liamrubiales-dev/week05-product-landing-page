@@ -18,7 +18,7 @@
         @endforeach
     </ul>
 
-    <a href="#contact" class="block text-center py-3 rounded-lg font-semibold transition-colors {{ $highlighted ?? false ? 'bg-brew-amber text-brew-cream hover:bg-brew-cream hover:text-brew-ink' : 'bg-brew-ink/5 text-brew-ink hover:bg-brew-ink hover:text-brew-cream' }}">
+    <x-button href="#contact" :variant="($highlighted ?? false) ? 'primary' : 'dark-outline'" class="w-full">
         {{ $button ?? 'Subscribe' }}
-    </a>
+    </x-button>
 </div>
